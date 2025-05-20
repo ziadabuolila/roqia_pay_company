@@ -1,0 +1,147 @@
+:root {
+    --main-color: #53a951;
+    --second-color: #1e1f1e;
+}
+
+.img-slide-group {
+    display: flex;
+}
+
+.slide {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: auto; */
+    /* margin-top: 105px; */
+    /* border: 5px solid #000; */
+    /* border-radius: 40px; */
+    /* height: 84vh; */
+    overflow: hidden;
+    position: relative;
+    border: none;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 40px; */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.slide {
+    /* width: 70%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: auto; */
+    /* border: 5px solid #000; */
+    /* border-radius: 40px; */
+    /* height: 70vh; */
+    /* margin-bottom: 40px; */
+    height: calc(100vh - (89px + 75px)) !important;
+    width: 50% !important;
+}
+
+.carousel-inner {
+    border-radius: 40px;
+}
+
+.w-100 {
+    height: 737px;
+}
+
+
+@media (max-width: 430px) {
+    .slide {
+        width: 401px !important;
+        /* margin-top: 120px !important; */
+    }
+
+    .w-100 {
+        height: 773px;
+    }
+}
+
+@media (max-width: 390px) {
+    .slide {
+        width: 350px !important;
+        /* margin-top: 120px !important; */
+    }
+
+    .w-100 {
+        height: 701px;
+    }
+}
+
+@media (max-width: 375px) {
+    .slide {
+        width: 350px !important;
+        /* margin-top: 100px !important; */
+    }
+
+    .w-100 {
+        height: 551px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .img-slide-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-slide-group .slide{
+        width: 100% !important;
+    }
+    .img-slide-group .slide:nth-child(2){
+        display: none !important;
+    }
+}
