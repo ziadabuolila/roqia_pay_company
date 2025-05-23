@@ -17,12 +17,8 @@
 </head>
 <body>
     <!-- loader -->
-    <div class="loader">
-        <div id="loader">
-            <div class="load-place right"></div>
-            <div class="load-place left"></div>
-            <img src="img/Loader_icon.png" alt="roqia">
-        </div>
+    <div id="loader">
+        <img src="img/Loader_icon.png" alt="roqia">
     </div>
     <!-- header -->
     <header>
@@ -135,7 +131,7 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="text-container">
             <div class="name">            
-                <div class="typing-container">
+                <div class="typing-container" data-aos="fade-right">
                     <span class="company-name">Roaya Pay ,</span>
                     <span>
                         For Payment Solutions And Software
@@ -143,7 +139,7 @@
                 </div>
             </div>
         </div>
-        <img class="logo" src="img/Roqia.png" alt="roqia">
+        <img class="logo" src="img/Roqia.png" alt="roqia" data-aos="zoom-in">
         <a href="#about" class="go-down">
             <button id="go-down">
                 <i class="fa-solid fa-chevron-down"></i>
@@ -243,9 +239,13 @@
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
     <script>
-        AOS.init({
-        duration: 2000,
-        once: true,
+        window.addEventListener( "DOMContentLoaded" ,  () => {
+            setTimeout(function() {
+                AOS.init({
+                duration: 2000,
+                once: true,
+                });
+            }, 2300);
         });
     </script>
 </body>

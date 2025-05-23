@@ -1,16 +1,13 @@
 // loader
-window.onload = function(){
-}
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(function () {
-        (function ($) {
-            $('#loader').removeClass('show');
-            $('.loader').addClass('d-none');
-        })(jQuery);
-        document.querySelector(".text-container").classList.toggle("animathion-name");
-        document.querySelector(".logo").classList.toggle("animathion-logo");
-        document.querySelector("#go-down").classList.toggle("go-down-animation");
-    }, 1800);
+window.addEventListener("load", () => {
+    setTimeout(() => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => {
+        loader.style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    }, 500);
+    }, 2000);
 });
 // menu
 document.addEventListener("DOMContentLoaded", () => {
