@@ -12,18 +12,15 @@
     <!-- css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- title -->
     <title>شركة رؤيـــة باي لحلول السداد و البرمجيات</title>
 </head>
 <body>
     <!-- loader -->
-    <div class="loader">
-        <div id="loader">
-            <div class="load-place right"></div>
-            <div class="load-place left"></div>
-            <img src="img/Loader_icon.png" alt="roqia">
-        </div>
+    <div id="loader">
+        <img src="img/Loader_icon.png" alt="roqia" draggable="false">
     </div>
     <!-- header -->
     <header>
@@ -117,7 +114,7 @@
             </li>
             <li>
                 <a href="terms_and_conditions.html">
-                    <i class="fa-solid fa-question"></i>
+                    <i class="fa-solid fa-gavel"></i>
                     الشروط والاحكام
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
@@ -136,7 +133,7 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="text-container">
             <div class="name">            
-                <div class="typing-container">
+                <div class="typing-container" data-aos="fade-left">
                     <span class="company-name">رؤيـــة بـــاي ,</span>
                     <span>
                         لحلول السداد و البرمجيات 
@@ -144,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <img class="logo" src="img/Roqia.png" alt="roqia">
+        <img class="logo" src="img/Roqia.png" alt="roqia" data-aos="zoom-in">
         <a href="#about" class="go-down">
             <button id="go-down">
                 <i class="fa-solid fa-chevron-down"></i>
@@ -245,9 +242,13 @@
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
     <script>
-        AOS.init({
-        duration: 2000,
-        once: true,
+        window.addEventListener( "DOMContentLoaded" ,  () => {
+            setTimeout(function() {
+                AOS.init({
+                duration: 2000,
+                once: true,
+                });
+            }, 2300);
         });
     </script>
 </body>

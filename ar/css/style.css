@@ -62,71 +62,38 @@ body {
 }
 
 /* loader */
-.loader {
+#loader{
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: #fff;
-    z-index: 999999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     top: 0;
-}
-
-#loader {
-    position: relative;
-    width: 170px;
-    height: 170px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
 }
-.load-place {
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 8px solid transparent;
+#loader img {
+    width: 230px;
+    height: auto;
+    animation: img 1.5s infinite;
 }
-.load-place.right {
-    border-right-color: #61ad47;
-    border-top-color: #61ad47;
-    animation: rotateRight 1.8s linear infinite;
-}
-.load-place.left {
-    border-left-color: #61ad47;
-    border-bottom-color: #61ad47;
-    animation: rotateLeft 1.8s linear infinite;
-}
-.load-place+img {
-    border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-@keyframes rotateRight {
+@keyframes img {
     0% {
-        transform: rotate(0deg);
+        transform: scale(1);
+        opacity: 1;
     }
-
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
     100% {
-        transform: rotate(360deg);
+        transform: scale(1);
+        opacity: 1;
     }
 }
-@keyframes rotateLeft {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(-360deg);
-    }
-}
-
 /* home */
 .slide {
     position: relative;
@@ -163,89 +130,8 @@ body {
     position: relative;
 }
 
-.animathion-name {
-    animation: animathion-name 2s forwards;
-}
-
-button#go-down {
-    border: none;
-    outline: none;
-    position: absolute;
-    bottom: 170px;
-    background: var(--main-color);
-    color: #fff;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-a.go-down {
-    position: absolute;
-    bottom: 0px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button#go-down.go-down-animation {
-    animation: go-down-animation 1.32s infinite alternate ease-out, show-go-down-animation 2s;
-}
-
-@keyframes animathion-name {
-    0% {
-        right: -500px;
-    }
-
-    100% {
-        right: 0;
-    }
-}
-
-@keyframes animathion-logo {
-    0% {
-        opacity: 0;
-        rotate: 90deg;
-    }
-
-    100% {
-        opacity: 1;
-        rotate: 0deg;
-    }
-}
-
-@keyframes go-down-animation {
-    0% {
-        bottom: 160px;
-        height: 50px;
-    }
-
-    50% {
-        bottom: 200px;
-        height: 50px;
-    }
-
-    100% {
-        bottom: 160px;
-        height: 40px;
-    }
-}
-
-@keyframes show-go-down-animation {
-    0% {
-        opacity: 0;
-        bottom: -10px;
-    }
-
-    100% {
-        opacity: 1;
-        bottom: 200px;
-    }
-}
-
 .text-container>.name {
-    display: flex;
+    display: flex;  
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -267,6 +153,40 @@ button#go-down.go-down-animation {
     height: fit-content;
     flex-wrap: nowrap;
 }
+button#go-down {
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 170px;
+    background: var(--main-color);
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: go-down 2s infinite;
+}
+
+a.go-down {
+    position: absolute;
+    bottom: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes go-down {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 .typing-container>span.company-name {
     color: var(--main-color);
