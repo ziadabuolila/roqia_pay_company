@@ -61,7 +61,7 @@ body {
 }
 
 /* loader */
-#loader{
+#loader {
     position: fixed;
     top: 0;
     left: 0;
@@ -74,20 +74,24 @@ body {
     z-index: 9999;
     transition: opacity 0.5s ease;
 }
+
 #loader img {
     width: 230px;
     height: auto;
     animation: img 1.5s infinite;
 }
+
 @keyframes img {
     0% {
         transform: scale(1);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.1);
         opacity: 0.7;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -126,6 +130,7 @@ body {
     width: 405px;
     position: relative;
 }
+
 a.go-down {
     position: absolute;
     bottom: 0px;
@@ -134,6 +139,7 @@ a.go-down {
     align-items: center;
     justify-content: center;
 }
+
 button#go-down {
     border: none;
     outline: none;
@@ -152,9 +158,11 @@ button#go-down {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-30px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -984,4 +992,59 @@ svg:not(:root) {
         font-size: 16.4px;
         width: 95%;
     }
+}
+
+/* message */
+.message_login {
+    background-color: var(--second-color);
+    width: 335px;
+    height: 315px;
+    border-radius: 25px;
+    position: fixed;
+    top: 20px;
+    left: -100%;
+    transition: right 1s ease;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+    transform: translate(0, 70%);
+}
+
+.message_login.show {
+    left: 20px;
+}
+
+.message_login>.div1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+
+.message_login>.div1 .fa-xmark {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.message_login>.div1 img {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.message_login>.div2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.message_login>.div2>button {
+    width: 60%;
+    height: 60px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    transform: translate(0, 70%);
+    border: none;
 }
