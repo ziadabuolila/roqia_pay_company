@@ -40,3 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
         e.stopPropagation();
     });
 });
+// message
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        document.querySelector(".message_login").classList.add("show");
+    }, 2300);
+});
+document.querySelector(".message_login .fa-xmark").addEventListener("click", function () {
+    document.querySelector(".message_login").classList.remove("show");
+});
